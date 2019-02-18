@@ -34,5 +34,5 @@ There are four props available on `Backdrop`:
 
 The following dependencies are required by `Backdrop`:
 
-- ([react-transition-group/Transition](https://www.npmjs.com/package/react-transition-group))
+- [Transition](https://www.npmjs.com/package/react-transition-group)
 - [classnames](https://www.npmjs.com/package/classnames)

@@ -15,7 +15,7 @@ Provides a connected overlay wrapper component.
 ### Usage
 
 ```javascript
-import { ConnectedOverlay } from "/Overlay";
+import { ConnectedOverlay } from "./Overlay";
 
 class MyClass extends React.Component {
   inputRef: any;
@@ -68,7 +68,7 @@ class MyClass extends React.Component {
 - `followCursor`: Optional boolean to have the overlay follow the cursor using `Position`
 - `modifiers`: Optional modifiers of type `PopperJS.Modifiers` used for positioning
 - `onActivate`: Optional function called when the overlay is activated. It accepts one parameter, `event`, of type `OverlayEvent`
-- `onDeactivate`?: Optional function called when the overlay is deactivated. It accepts one parameter, `event`, of type `OverlayEvent`
+- `onDeactivate`: Optional function called when the overlay is deactivated. It accepts one parameter, `event`, of type `OverlayEvent`
 - `placement`: Optional string of type `PopperJS.Placement` representing the position of the overlay
 - `reference`: Reference of the overlay of type `ReferenceObject` or `HTMLElement`
 - `trigger`: A single trigger or an array of triggers, each of type `TriggerTypes`
@@ -77,15 +77,20 @@ class MyClass extends React.Component {
 ### Dependencies
 
 - [Popper.js](https://www.npmjs.com/package/popper.js/v/1.14.3)
+- [Transition](https://www.npmjs.com/package/react-transition-group)
 
 ## GlobalOverlay
 
 Overlay component that provides a global overlay with a close callback and can be called by pressing `esc` or clicking the backdrop.
 
+### Dependencies
+
+- [react-scrolllock](https://www.npmjs.com/package/react-scrolllock)
+
 ### Example
 
 ```javascript
-import { GlobalOverlay } from '/Overlay';
+import { GlobalOverlay } from './Overlay';
 
 function onClose() {
   // ...
@@ -118,7 +123,7 @@ function onClose() {
 
 ## OverlayContext
 
-`OverlayContext` is a context provider used by `GlobalOverlay` that accepts a `close` function that closes current overlay.
+`OverlayContext` is a context provider used by `GlobalOverlay` that accepts a `close` function that closes current overlay. There are no dependencies.
 
 ## OverlayPortal
 
@@ -159,3 +164,7 @@ The following types are supported by `TriggerTypes`:
   - `type`: Trigger type of type `TriggerTypes`
   - `nativeEvent`: Native event object triggered upon activation
 - `trigger`: A single trigger or an array of triggers, each of type `TriggerTypes`
+
+### Dependencies
+
+- [memoize-bind](https://www.npmjs.com/package/memoize-bind)
