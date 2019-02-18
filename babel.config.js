@@ -5,7 +5,7 @@ module.exports = function(api) {
     ['@babel/preset-env',
     {
       targets: {
-        esmodules: false
+        esmodules: true
       }
     }],
     '@babel/preset-react',
@@ -16,7 +16,7 @@ module.exports = function(api) {
     '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread',
     '@babel/plugin-syntax-dynamic-import',
-    // ß'@babel/plugin-transform-runtime',
+    // '@babel/plugin-transform-runtime',
     [
       '@babel/plugin-proposal-decorators',
       {
