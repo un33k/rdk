@@ -1,12 +1,11 @@
 module.exports = function(api) {
   api.cache.forever();
-  const isTest = process.env.NODE_ENV === 'test';
 
   const presets = [
     ['@babel/preset-env',
     {
       targets: {
-        esmodules: !isTest
+        esmodules: true
       }
     }],
     '@babel/preset-react',
@@ -17,7 +16,7 @@ module.exports = function(api) {
     '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread',
     '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-transform-runtime',
+    // ß'@babel/plugin-transform-runtime',
     [
       '@babel/plugin-proposal-decorators',
       {
@@ -25,10 +24,6 @@ module.exports = function(api) {
       }
     ]
   ];
-
-  if (isTest) {
-    plugins.push('./config/jest/babel-plugin-use-lodash');
-  }
 
   return {
     presets,
