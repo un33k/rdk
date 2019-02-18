@@ -1,0 +1,18 @@
+.backdrop {
+  position: fixed;
+  background: var(--color-layer-transparent);
+  transition: opacity 100ms cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+}
+
+/* stylelint-disable */
+@for $i from 0 through 6 {
+  :global .backdrop-#{$i}.entered {
+    opacity: #{0.8 - ($i / 10)};
+  }
+}
+/* stylelint-enable */
