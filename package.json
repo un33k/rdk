@@ -1,0 +1,42 @@
+{
+  "name": "react-cdk",
+  "version": "1.0.0",
+  "description": "React Component Developer Kit",
+  "scripts": {
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://amcdnl@github.com/jask-oss/react-cdk.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "JASK",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jask-oss/react-cdk/issues"
+  },
+  "homepage": "https://github.com/jask-oss/react-cdk#readme",
+  "dependencies": {
+    "popper.js": "^1.14.7",
+    "classnames": "^2.2.6",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "memoize-bind": "^1.0.3",
+    "react-scrolllock": "^4.0.1",
+    "react-sizeme": "^2.5.2",
+    "react-transition-group": "^2.5.3"
+  },
+  "peerDependencies": {
+  },
+  "devDependencies": {
+    "@storybook/react": "^4.1.12",
+    "@storybook/addon-actions": "^4.1.12",
+    "@storybook/addon-links": "^4.1.12",
+    "@storybook/addons": "^4.1.12",
+    "@babel/core": "^7.3.3",
+    "babel-loader": "^8.0.5"
+  }
+}
