@@ -9,8 +9,6 @@
     "baseUrl": "./src",
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
