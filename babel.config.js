@@ -5,7 +5,7 @@ module.exports = function(api) {
     ['@babel/preset-env',
     {
       targets: {
-        esmodules: true
+        esmodules: false
       }
     }],
     '@babel/preset-react',
