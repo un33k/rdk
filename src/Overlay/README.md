@@ -77,10 +77,15 @@ class MyClass extends React.Component {
 ### Dependencies
 
 - [Popper.js](https://www.npmjs.com/package/popper.js/v/1.14.3)
+- [Transition](https://www.npmjs.com/package/react-transition-group)
 
 ## GlobalOverlay
 
 Overlay component that provides a global overlay with a close callback and can be called by pressing `esc` or clicking the backdrop.
+
+### Dependencies
+
+- [react-scrolllock](https://www.npmjs.com/package/react-scrolllock)
 
 ### Example
 
@@ -118,7 +123,7 @@ function onClose() {
 
 ## OverlayContext
 
-`OverlayContext` is a context provider used by `GlobalOverlay` that accepts a `close` function that closes current overlay.
+`OverlayContext` is a context provider used by `GlobalOverlay` that accepts a `close` function that closes current overlay. There are no dependencies.
 
 ## OverlayPortal
 
@@ -159,3 +164,7 @@ The following types are supported by `TriggerTypes`:
   - `type`: Trigger type of type `TriggerTypes`
   - `nativeEvent`: Native event object triggered upon activation
 - `trigger`: A single trigger or an array of triggers, each of type `TriggerTypes`
+
+### Dependencies
+
+- [memoize-bind](https://www.npmjs.com/package/memoize-bind)
