@@ -1,0 +1,8 @@
+{
+    "env": {
+        "compiler": "bit.envs/compilers/react-typescript@0.0.5"
+    },
+    "dependencies": {},
+    "componentsDefaultDirectory": "src/{name}",
+    "packageManager": "npm"
+}
