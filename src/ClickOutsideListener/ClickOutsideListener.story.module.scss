@@ -1,3 +1,12 @@
-.test {
-  border: 1px solid red;
+.outside {
+  padding: 50px 25%;
+}
+
+.inside {
+  padding: 25px;
+  border: 1px solid #000; 
+}
+
+.clickedMsg {
+  padding: 10px 0;
 }
