@@ -12,9 +12,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "typeRoots": ["./types", "./node_modules/@types"],
     "declaration": true
   },
   "types": ["node"],
-  "include": ["src/typings.d.ts", "src/index.ts"],
   "exclude": ["node_modules", "src/**/*.test.tsx"]
 }

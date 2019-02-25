@@ -1,8 +1,8 @@
 import resolve from 'rollup-plugin-node-resolve';
 import sourceMaps from 'rollup-plugin-sourcemaps';
-import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
 import external from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss-modules';
 import autoprefixer from 'autoprefixer';
 import pkg from './package.json';
 
@@ -19,13 +19,14 @@ export default {
     external(),
     postcss({
       modules: true,
-      sourceMap: true,
+      extract: true,
+      writeDefinitions: true,
       plugins: [
         autoprefixer()
       ]
     }),
-    resolve(),
     typescript(),
+    resolve(),
     sourceMaps()
   ]
 };

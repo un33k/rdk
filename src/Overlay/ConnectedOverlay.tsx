@@ -8,7 +8,7 @@ import {
   ReferenceObject,
   Placement
 } from '../Position';
-import * as bind from 'memoize-bind';
+import bind from 'memoize-bind';
 
 export interface OverlayEvent {
   type: TriggerTypes;

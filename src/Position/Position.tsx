@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import PopperJS from 'popper.js';
 import classNames from 'classnames';
 import sizeMe from 'react-sizeme';
-import * as bind from 'memoize-bind';
+import bind from 'memoize-bind';
 import * as css from './Position.module.scss';
 
 export type Placement = PopperJS.Placement;

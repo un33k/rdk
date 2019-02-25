@@ -1,6 +1,6 @@
 import React, { ReactNode, Component } from 'react';
 import classNames from 'classnames';
-import * as bind from 'memoize-bind';
+import bind from 'memoize-bind';
 
 export type TriggerTypes = 'hover' | 'click' | 'focus' | 'key';
 

@@ -3,7 +3,7 @@ import Transition from 'react-transition-group/Transition';
 import { OverlayPortal } from './OverlayPortal';
 import { Backdrop } from './Backdrop';
 import ScrollLock from 'react-scrolllock';
-import * as bind from 'memoize-bind';
+import bind from 'memoize-bind';
 import { OverlayContext } from './OverlayContext';
 
 export interface GlobalOverlayProps {
