@@ -1,6 +1,7 @@
-## ClickOutsideListener
+## ExitListener
 
-The `ClickOutsideListener` adds mouse and keyboard event listeners to provide callbacks to handle events when the user clicks outside a certain element or presses the `esc` key.
+The `ExitListener` adds mouse and keyboard event listeners to provide callbacks to handle
+events when the user clicks outside a certain element or presses the `esc` key.
 
 ## Usage
 
@@ -13,7 +14,7 @@ class MyClass extends Component {
   render() {
     <div>
       <span>Outside</span>
-      <ClickOutsideListener
+      <ExitListener
         onClickOutside={() => setVisible(false)}
         onEscape={() => setVisible(false)}
       >
@@ -22,7 +23,7 @@ class MyClass extends Component {
           <button onClick={() => setVisible(true)}>Toggle</button>
           {visible && <span>Clicked</span>}
         </div>
-      </ClickOutsideListener>
+      </ExitListener>
     </div>;
   }
 }

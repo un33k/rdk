@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import { createPortal } from 'react-dom';
 
 interface PortalProps {
   children: React.ReactNode;
@@ -7,7 +7,7 @@ interface PortalProps {
   onUnmount: () => void;
 }
 
-export class Portal extends React.Component<PortalProps, {}> {
+export class Portal extends Component<PortalProps, {}> {
   static defaultProps = {
     onMount: () => undefined,
     onUnmount: () => undefined
@@ -31,6 +31,6 @@ export class Portal extends React.Component<PortalProps, {}> {
       this.props.onMount();
     }
 
-    return ReactDOM.createPortal(this.props.children, this.defaultNode);
+    return createPortal(this.props.children, this.defaultNode);
   }
 }

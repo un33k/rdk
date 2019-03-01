@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Transition } from 'react-transition-group';
 import { Portal } from '../Portal';
 import { OverlayTrigger, TriggerTypes } from './OverlayTrigger';
-import { ClickOutsideListener } from '../ClickOutsideListener';
+import { ExitListener } from '../ExitListener';
 import {
   Position,
   ReferenceObject,
@@ -90,12 +90,12 @@ export class ConnectedOverlay extends React.Component<ConnectedOverlayProps> {
         followCursor={followCursor}
         ref={ref => (this.positionRef = ref)}
       >
-        <ClickOutsideListener
+        <ExitListener
           onClickOutside={bind(this.onClickOutside, this)}
           onEscape={bind(this.onEscape, this)}
         >
           {content(animationState)}
-        </ClickOutsideListener>
+        </ExitListener>
       </Position>
     );
   }

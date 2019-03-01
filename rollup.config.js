@@ -6,27 +6,58 @@ import postcss from 'rollup-plugin-postcss-modules';
 import autoprefixer from 'autoprefixer';
 import pkg from './package.json';
 
-export default {
-  input: pkg.source,
-  output: [
-    {
-      file: pkg.module,
-      format: 'esm',
-      sourcemap: true
-    }
-  ],
-  plugins: [
-    external(),
-    postcss({
-      modules: true,
-      extract: true,
-      writeDefinitions: true,
-      plugins: [
-        autoprefixer()
-      ]
-    }),
-    typescript(),
-    resolve(),
-    sourceMaps()
-  ]
-};
+export default [
+  {
+    input: pkg.source,
+    output: [
+      {
+        file: pkg.main,
+        format: 'iife',
+        sourcemap: true,
+        name: 'rdk'
+      }
+    ],
+    plugins: [
+      external({
+        includeDependencies: true
+      }),
+      postcss({
+        modules: true,
+        extract: true,
+        writeDefinitions: true,
+        plugins: [
+          autoprefixer()
+        ]
+      }),
+      typescript(),
+      resolve(),
+      sourceMaps()
+    ]
+  },
+  {
+    input: pkg.source,
+    output: [
+      {
+        file: pkg.module,
+        format: 'esm',
+        sourcemap: true
+      }
+    ],
+    plugins: [
+      external({
+        includeDependencies: true
+      }),
+      postcss({
+        modules: true,
+        extract: true,
+        writeDefinitions: true,
+        plugins: [
+          autoprefixer()
+        ]
+      }),
+      typescript(),
+      resolve(),
+      sourceMaps()
+    ]
+  }
+];

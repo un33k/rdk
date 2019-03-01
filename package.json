@@ -1,9 +1,9 @@
 {
-  "name": "react-cdk",
+  "name": "rdk",
   "version": "1.0.0",
   "description": "React Component Developer Kit",
   "scripts": {
-    "storybook": "start-storybook -p 9009",
+    "storybook": "start-storybook",
     "build-storybook": "build-storybook",
     "build": "rollup -c"
   },
@@ -13,27 +13,31 @@
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://amcdnl@github.com/jask-oss/react-cdk.git"
+    "url": "git+https://github.com/jask-oss/rdk.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "react"
   ],
   "author": "JASK",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/jask-oss/react-cdk/issues"
+    "url": "https://github.com/jask-oss/rdk/issues"
   },
-  "homepage": "https://github.com/jask-oss/react-cdk#readme",
-  "dependencies": {},
-  "peerDependencies": {
+  "homepage": "https://github.com/jask-oss/rdk#readme",
+  "dependencies": {
     "classnames": "^2.2.6",
     "memoize-bind": "^1.0.3",
     "popper.js": "^1.14.7",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
     "react-scrolllock": "^4.0.1",
     "react-sizeme": "^2.5.2",
     "react-transition-group": "^2.5.3"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -55,16 +59,10 @@
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
     "autoprefixer": "^9.3.1",
-    "classnames": "^2.2.6",
-    "memoize-bind": "^1.0.3",
     "node-sass": "^4.11.0",
-    "popper.js": "^1.14.7",
     "postcss-focus-visible": "^4.0.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "react-scrolllock": "^4.0.1",
-    "react-sizeme": "^2.5.2",
-    "react-transition-group": "^2.5.3",
     "rollup": "^1.2.2",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.0",

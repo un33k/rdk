@@ -1,19 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 
-interface ClickOutsideListenerProps {
+interface ExitListenerProps {
   children: React.ReactNode;
   onClickOutside?: (event: MouseEvent) => void;
   onEscape?: (event: KeyboardEvent) => void;
 }
 
-export class ClickOutsideListener extends React.Component<
-  ClickOutsideListenerProps
+export class ExitListener extends Component<
+  ExitListenerProps
 > {
   node: Element | null = null;
 
   componentDidMount() {
-    this.node = ReactDOM.findDOMNode(this) as Element;
+    this.node = findDOMNode(this) as Element;
 
     if (this.props.onClickOutside) {
       document.addEventListener('mousedown', this.onDocumentClick);
