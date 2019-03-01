@@ -7,6 +7,7 @@ yarn-error.log*
 pkg/
 .rpt2_cache/
 dist/
+storybook-static/
 
 # Runtime data
 pids
