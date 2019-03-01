@@ -6,6 +6,23 @@ import postcss from 'rollup-plugin-postcss-modules';
 import autoprefixer from 'autoprefixer';
 import pkg from './package.json';
 
+const plugins = [
+  external({
+    includeDependencies: true
+  }),
+  postcss({
+    modules: true,
+    extract: true,
+    writeDefinitions: true,
+    plugins: [
+      autoprefixer()
+    ]
+  }),
+  typescript(),
+  resolve(),
+  sourceMaps()
+];
+
 export default [
   {
     input: pkg.source,
@@ -17,22 +34,7 @@ export default [
         name: 'rdk'
       }
     ],
-    plugins: [
-      external({
-        includeDependencies: true
-      }),
-      postcss({
-        modules: true,
-        extract: true,
-        writeDefinitions: true,
-        plugins: [
-          autoprefixer()
-        ]
-      }),
-      typescript(),
-      resolve(),
-      sourceMaps()
-    ]
+    plugins
   },
   {
     input: pkg.source,
@@ -43,21 +45,6 @@ export default [
         sourcemap: true
       }
     ],
-    plugins: [
-      external({
-        includeDependencies: true
-      }),
-      postcss({
-        modules: true,
-        extract: true,
-        writeDefinitions: true,
-        plugins: [
-          autoprefixer()
-        ]
-      }),
-      typescript(),
-      resolve(),
-      sourceMaps()
-    ]
+    plugins
   }
 ];
