@@ -35,3 +35,12 @@ npm i rdk --save
 ```
 
 Visit the [demos page](https://jask-oss.github.io/rdk/) to learn more!
+
+## 🔭 Development
+
+If you want to run R2D3 locally, its super easy!
+
+- Clone the repo
+- `npm i`
+- `npm start`
+- Browser opens to Storybook page
