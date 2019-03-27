@@ -1,6 +1,6 @@
 {
   "name": "rdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Component Developer Kit",
   "scripts": {
     "start": "start-storybook",
@@ -10,6 +10,8 @@
   },
   "source": "src/index.ts",
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "jsnext:main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
@@ -51,10 +53,11 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
     "@babel/runtime": "^7.3.1",
-    "@storybook/addon-centered": "^5.0.0-rc.9",
-    "@storybook/addon-info": "^5.0.0-rc.9",
-    "@storybook/addons": "^5.0.0-rc.9",
-    "@storybook/react": "^5.0.0-rc.9",
+    "@storybook/addon-centered": "^5.0.3",
+    "@storybook/addon-info": "^5.0.3",
+    "@storybook/addons": "^5.0.3",
+    "@storybook/react": "^5.0.3",
+    "@storybook/addon-storysource": "^5.0.3",
     "react-docgen-typescript-loader": "^3.0.1",
     "@types/classnames": "^2.2.7",
     "@types/react": "^16.8.4",

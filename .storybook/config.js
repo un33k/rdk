@@ -5,15 +5,15 @@ import { withInfo } from '@storybook/addon-info';
 
 addParameters({
   options: {
+    showPanel: false,
+    panelPosition: 'right',
     theme: {
       ...themes.dark,
-      animation: false,
-      brand: 'rdk',
-      title: 'rdk',
-      image: '',
-      url: ''
+      animation: true,
+      brandTitle: 'RDK',
+      url: 'https://jask-oss.github.io/rdk/'
     }
-  },
+  }
 });
 
 addDecorator(centered);
