@@ -5,6 +5,7 @@ import { Backdrop } from './Backdrop';
 import ScrollLock from 'react-scrolllock';
 import bind from 'memoize-bind';
 import { OverlayContext } from './OverlayContext';
+import classNames from 'classnames';
 
 export interface GlobalOverlayProps {
   open: boolean;
@@ -14,6 +15,7 @@ export interface GlobalOverlayProps {
   closeOnBackdropClick?: boolean;
   onClose?: () => void;
   hasBackdrop?: boolean;
+  backdropClassName?: any;
 }
 
 interface GlobalOverlayState {
@@ -82,7 +84,7 @@ export class GlobalOverlay extends Component<
 
   render() {
     const { open } = this.state;
-    const { hasBackdrop, children, render } = this.props;
+    const { hasBackdrop, children, render, backdropClassName } = this.props;
     const renderFn = children || render;
 
     return (
@@ -110,7 +112,7 @@ export class GlobalOverlay extends Component<
                         zIndex={backdropIndex}
                         visible={open}
                         onClick={bind(this.onBackdropClick, this)}
-                        className={`backdrop-${portalIndex}`}
+                        className={classNames(`backdrop-${portalIndex}`, backdropClassName)}
                       />
                     )}
                     {renderFn({ overlayIndex, animation })}
