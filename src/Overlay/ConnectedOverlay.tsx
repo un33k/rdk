@@ -27,6 +27,7 @@ export interface ConnectedOverlayProps {
   closeOnEscape: boolean;
   appendToBody?: boolean;
   followCursor?: boolean;
+  zIndex: number;
   onActivate?: (event: OverlayEvent) => void;
   onDeactivate?: (event: OverlayEvent) => void;
 }
@@ -35,7 +36,8 @@ export class ConnectedOverlay extends React.Component<ConnectedOverlayProps> {
   static defaultProps: Partial<ConnectedOverlayProps> = {
     closeOnBodyClick: true,
     closeOnEscape: true,
-    appendToBody: true
+    appendToBody: true,
+    zIndex: 9999
   };
 
   triggerRef: OverlayTrigger | null = null;
@@ -78,12 +80,12 @@ export class ConnectedOverlay extends React.Component<ConnectedOverlayProps> {
   }
 
   renderContent(animationState: string) {
-    const { placement, modifiers, content, followCursor } = this.props;
+    const { placement, modifiers, content, followCursor, zIndex } = this.props;
     const reference = this.getReference();
 
     return (
       <Position
-        style={{ zIndex: 9999 }}
+        style={{ zIndex }}
         reference={reference}
         placement={placement}
         modifiers={modifiers}
