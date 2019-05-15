@@ -1,8 +1,6 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import PopperJS from 'popper.js';
 import classNames from 'classnames';
-import sizeMe from 'react-sizeme';
-import bind from 'memoize-bind';
 import * as css from './Position.module.scss';
 
 export type Placement = PopperJS.Placement;
@@ -23,13 +21,7 @@ interface PositionProps {
   followCursor?: boolean;
 }
 
-const SizeMe = sizeMe({
-  monitorHeight: true,
-  monitorWidth: true,
-  refreshMode: 'debounce'
-})(({ children }) => <Fragment>{children}</Fragment>);
-
-export class Position extends Component<PositionProps, {}> {
+export class Position extends Component<PositionProps> {
   static defaultProps: Partial<PositionProps> = {
     placement: 'top',
     modifiers: {}
@@ -125,12 +117,6 @@ export class Position extends Component<PositionProps, {}> {
     }
   }
 
-  onSize() {
-    if (this.popperInstance) {
-      this.popperInstance.scheduleUpdate();
-    }
-  }
-
   render() {
     const { className, style, children } = this.props;
 
@@ -140,7 +126,7 @@ export class Position extends Component<PositionProps, {}> {
         className={classNames(className, css.container)}
         style={style}
       >
-        <SizeMe onSize={bind(this.onSize, this)}>{children}</SizeMe>
+        {children}
       </span>
     );
   }
